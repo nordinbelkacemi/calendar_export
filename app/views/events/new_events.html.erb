@@ -1,0 +1,23 @@
+<% if user_signed_in? %>
+  <div class="user-info">
+    <%= @user.email %>
+  </div>
+  <div class="user-schedule">
+    <% @user.events.each do |event| %>
+    <div class="event-info">
+      <div class="event-time">
+        <%= "#{event.start_time.strftime("%H:%M")} - " %>
+        <%= event.end_time.strftime("%H:%M") %>
+      </div>
+      <div class="event-title">
+        <%= event.title %>
+      </div>
+      <div class="event-location">
+        <%= event.place %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+<% else %>
+  <%= "Sign up and upload your calendars" %>
+<% end %>
