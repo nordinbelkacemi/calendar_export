@@ -4,15 +4,13 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "calendar_icon.svg", height: 50 %>
+      <i class="far fa-calendar-check"></i>
     <% end %>
 
     <% if user_signed_in? %>
 
       <%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
-
     <% else %>
-      <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>

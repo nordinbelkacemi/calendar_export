@@ -19,5 +19,7 @@
     <% end %>
   </div>
 <% else %>
-  <%= "Sign up and upload your calendars" %>
+  <div class="wrapper">
+    <%= link_to "START", new_registration_path(User.new), class: "start-btn" %>
+  </div>
 <% end %>
